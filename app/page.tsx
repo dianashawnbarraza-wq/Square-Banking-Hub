@@ -57,6 +57,20 @@ const explorations: HubItem[] = [
       "Square Checking DS mobile Overview — tax set-aside on Banking shell (Monochrome)",
     href: "/cash-desk/tax",
   },
+  {
+    index: "05",
+    meta: "Prototype · SPOS · Mobile",
+    title: "Checking · Square Point of Sale",
+    description:
+      "iPhone SPOS: charge a sale on Checkout → Banking opens Welcome (animated debit card) → Not now reveals Banking home",
+    href: "/checking/spos",
+    tags: [
+      {
+        label: "Figma",
+        href: "https://www.figma.com/design/mcg2qzVEuKNsFeVPGe7F5U/Square-Checking-SPOS-for-Grok?node-id=1-45854",
+      },
+    ],
+  },
 ];
 
 const references: HubItem[] = [
