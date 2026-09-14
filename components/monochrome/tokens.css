@@ -1,0 +1,61 @@
+/**
+ * Square Monochrome tokens — mirrored from
+ * Figma h8cTguFsJdZqirJUR2cBVm (components · Mobile Native Header).
+ * Screens and components must use these vars only.
+ */
+
+:root {
+  /* Text */
+  --mono-text-10: #000000e5;
+  --mono-text-secondary: #0000008c;
+  --mono-text-inverse: #ffffff;
+  --mono-emphasis-text: #101010;
+
+  /* Fill / surface */
+  --mono-fill-10: #000000e5;
+  --mono-fill-20: #0000006b;
+  --mono-fill-40: #f0f0f0;
+  --mono-emphasis-fill: #101010;
+  --mono-surface-10: #ffffff;
+  --mono-divider-20: #f0f0f0;
+  --mono-success-fill: #00b23b;
+  --mono-success-tint: #c6fce4;
+  --mono-success-text: #005e5e;
+  --mono-canvas: #fafafa;
+  --mono-accent: #005ad9;
+
+  /* Spacing — 8px unit; 16px between page items (see design.md) */
+  --mono-space-25: 2px;
+  --mono-space-100: 8px;
+  --mono-space-150: 12px; /* avoid for page rhythm; prefer unit or page */
+  --mono-space-200: 16px;
+  --mono-space-300: 24px; /* 3× unit; sheets / large insets only */
+  --mono-space-unit: var(--mono-space-100); /* 8px — related / tight */
+  --mono-space-page: var(--mono-space-200); /* 16px — between page items */
+  --mono-pad-wide-md-x: 20px;
+  --mono-pad-wide-md-y: 12px;
+
+  /* Radius / size */
+  --mono-radius-100: 6px;
+  --mono-radius-card: 12px;
+  --mono-radius-pill: 62px;
+  --mono-min-height-md: 48px;
+  --mono-min-height-sm: 40px;
+  --mono-icon-sm: 16px;
+  --mono-icon-md: 24px;
+  --mono-border-10: 1px;
+
+  /* Type — substitute if Square/Cash Sans unavailable */
+  --mono-font-display: "Square Sans Display", "Cash Sans", ui-sans-serif, system-ui, sans-serif;
+  --mono-font-text: "Square Sans Text", "Cash Sans", ui-sans-serif, system-ui, sans-serif;
+  --mono-display-10-size: 32px;
+  --mono-display-10-leading: 40px;
+  --mono-heading-20-size: 19px;
+  --mono-heading-20-leading: 26px;
+  --mono-para-30-size: 16px;
+  --mono-para-30-leading: 24px;
+  --mono-para-20-size: 14px;
+  --mono-para-20-leading: 22px;
+  --mono-para-10-size: 12px;
+  --mono-para-10-leading: 18px;
+}

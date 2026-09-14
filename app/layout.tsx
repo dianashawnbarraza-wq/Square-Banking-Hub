@@ -9,9 +9,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Square Money",
+  title: "Square Banking",
   description:
-    "Square Money design sandbox — Checking/debit adoption, Banking overview, and agentic Cash Desk explorations.",
+    "Square Banking Design Hub — cash flow design including Checking Adoption (SPOS).",
   robots: {
     index: false,
     follow: false,

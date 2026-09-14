@@ -1,0 +1,543 @@
+/**
+ * Checking shell chrome only — product UI uses components/monochrome.
+ * @see design.md
+ */
+
+@import "../../components/monochrome/mono.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.ck-stage {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--mono-canvas);
+  display: flex;
+  justify-content: center;
+  padding: 24px 8px;
+  font-family: var(--mono-font-text);
+  color: var(--mono-text-10);
+  -webkit-font-smoothing: antialiased;
+}
+
+.ck-phone {
+  width: 375px;
+  max-width: 100%;
+  min-height: 812px;
+  background: var(--mono-surface-10);
+  border-radius: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 24px 64px #00000014;
+}
+
+.ck-status {
+  height: 47px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 16px 4px;
+  font-family: var(--mono-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--mono-surface-10);
+}
+
+.ck-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 var(--mono-space-page) 88px;
+  background: var(--mono-surface-10);
+}
+
+.ck-hub {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--mono-text-secondary);
+  text-decoration: none;
+}
+
+.ck-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+}
+
+.ck-title {
+  margin: 0;
+  font-family: var(--mono-font-display);
+  font-size: 25px;
+  line-height: 32px;
+  font-weight: 700;
+  color: var(--mono-emphasis-text);
+}
+
+.ck-block-gap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mono-space-unit);
+}
+
+.ck-block-gap .mono-btn--block {
+  text-decoration: none;
+}
+
+.ck-tracker {
+  background: var(--mono-surface-10);
+  border: 1px solid var(--mono-fill-40);
+  border-radius: var(--mono-radius-card);
+  padding: var(--mono-space-page);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mono-space-unit);
+}
+
+.ck-tracker-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--mono-space-page);
+}
+
+.ck-h2 {
+  margin: 0;
+  font-family: var(--mono-font-display);
+  font-size: var(--mono-heading-20-size);
+  line-height: var(--mono-heading-20-leading);
+  font-weight: 700;
+}
+
+.ck-muted {
+  color: var(--mono-text-secondary);
+  font-size: var(--mono-para-20-size);
+  line-height: var(--mono-para-20-leading);
+  margin: 0;
+}
+
+.ck-tracker-head .ck-muted {
+  margin-top: var(--mono-space-unit);
+}
+
+.ck-mini-card {
+  width: 56px;
+  height: 36px;
+  border-radius: 6px;
+  background: var(--mono-surface-10);
+  border: 1px solid var(--mono-fill-40);
+  box-shadow: 0 2px 8px #00000014;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.ck-mini-card::after {
+  content: "";
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background: var(--mono-fill-10);
+  border-radius: 2px;
+}
+
+.ck-progress {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--mono-space-unit);
+  margin: 0;
+}
+
+.ck-progress span {
+  height: 4px;
+  border-radius: var(--mono-radius-pill);
+  background: var(--mono-fill-40);
+}
+
+.ck-progress span.is-on {
+  background: var(--mono-accent);
+}
+
+.ck-progress-labels {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--mono-text-secondary);
+}
+
+.ck-progress-labels .is-on {
+  color: var(--mono-accent);
+}
+
+.ck-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.ck-side-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.ck-side-amt {
+  font-family: var(--mono-font-display);
+  font-size: var(--mono-para-30-size);
+  line-height: var(--mono-para-30-leading);
+  font-weight: 700;
+  color: var(--mono-text-10);
+}
+
+.ck-tabbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background: var(--mono-surface-10);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-bottom: 6px;
+}
+
+.ck-tabbar span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.ck-tabbar span.is-active {
+  color: var(--mono-accent);
+  font-weight: 600;
+}
+
+.ck-scrim {
+  position: absolute;
+  inset: 0;
+  background: #00000066;
+  z-index: 20;
+}
+
+.ck-sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 85%;
+  background: var(--mono-surface-10);
+  border-radius: 20px 20px 0 0;
+  z-index: 30;
+  transform: translateY(110%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.ck-sheet.is-open {
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.ck-sheet-handle {
+  width: 36px;
+  height: 4px;
+  border-radius: var(--mono-radius-pill);
+  background: var(--mono-fill-40);
+  margin: 10px auto 0;
+}
+
+.ck-sheet-body {
+  padding: var(--mono-space-page) var(--mono-space-page) var(--mono-space-300);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mono-space-unit);
+}
+
+.ck-sheet-title {
+  margin: 0 0 var(--mono-space-unit);
+  font-family: var(--mono-font-display);
+  font-size: 25px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+.ck-sheet-label {
+  margin: 0;
+  font-family: var(--mono-font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.ck-sheet-label-gap {
+  margin-top: var(--mono-space-page);
+}
+
+.ck-welcome-art {
+  height: 180px;
+  margin: 0;
+  border-radius: var(--mono-radius-card);
+  background: linear-gradient(180deg, #e8e8e8, #f5f5f5);
+  position: relative;
+  overflow: hidden;
+}
+
+.ck-welcome-card {
+  position: absolute;
+  width: 200px;
+  height: 126px;
+  border-radius: 12px;
+  background: var(--mono-surface-10);
+  border: 1px solid var(--mono-fill-40);
+  box-shadow: 0 8px 24px #0000001a;
+}
+
+.ck-welcome-card.is-front {
+  left: 36px;
+  top: 28px;
+  z-index: 2;
+  padding: 14px;
+}
+
+.ck-welcome-card.is-back {
+  right: 28px;
+  top: 48px;
+  z-index: 1;
+  background: #f7f7f7;
+  transform: rotate(8deg);
+}
+
+.ck-welcome-brand {
+  margin-top: 40px;
+  font-size: 12px;
+}
+
+.ck-debit-mark {
+  width: 28px;
+  height: 28px;
+  background: var(--mono-fill-40);
+  border-radius: 4px;
+}
+
+.ck-welcome-h {
+  margin: 0;
+  font-family: var(--mono-font-display);
+  font-size: 25px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+.ck-welcome-p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--mono-text-secondary);
+}
+
+.ck-link-ghost {
+  display: block;
+  margin-top: 0;
+  text-align: center;
+  color: var(--mono-text-10);
+  font-size: 16px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  width: 100%;
+}
+
+/* Card numbers page */
+.ck-card-page-head {
+  display: flex;
+  align-items: center;
+  gap: var(--mono-space-unit);
+  min-height: 48px;
+}
+
+.ck-back {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: var(--mono-radius-pill);
+  background: var(--mono-fill-40);
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: var(--mono-text-10);
+}
+
+.ck-card-page-title {
+  flex: 1;
+  text-align: center;
+  margin: 0 40px 0 0;
+  font-family: var(--mono-font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.ck-debit-face {
+  background: var(--mono-surface-10);
+  border: 1px solid var(--mono-fill-40);
+  border-radius: var(--mono-radius-card);
+  padding: var(--mono-space-page);
+  box-shadow: 0 8px 24px #00000012;
+}
+
+.ck-debit-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--mono-space-page);
+}
+
+.ck-debit-num-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--mono-space-unit);
+  margin-bottom: var(--mono-space-page);
+}
+
+.ck-debit-num {
+  margin: 0;
+  font-family: var(--mono-font-display);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.ck-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  border: none;
+  border-radius: var(--mono-radius-pill);
+  background: var(--mono-fill-40);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--mono-text-10);
+}
+
+.ck-debit-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 13px;
+  color: var(--mono-text-secondary);
+}
+
+.ck-mc {
+  width: 36px;
+  height: 22px;
+  position: relative;
+}
+
+.ck-mc span {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  top: 2px;
+}
+
+.ck-mc span:first-child {
+  left: 0;
+  background: #6a6a6a;
+}
+
+.ck-mc span:last-child {
+  right: 0;
+  background: #b0b0b0;
+}
+
+.ck-list-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ck-list-block h2 {
+  margin: 0 0 var(--mono-space-unit);
+  font-family: var(--mono-font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.ck-toggle {
+  width: 44px;
+  height: 28px;
+  border-radius: var(--mono-radius-pill);
+  border: none;
+  background: var(--mono-fill-40);
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.ck-toggle.is-on {
+  background: var(--mono-fill-10);
+}
+
+.ck-toggle::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--mono-surface-10);
+  transition: transform 0.2s;
+}
+
+.ck-toggle.is-on::after {
+  transform: translateX(16px);
+}
+
+.ck-legal {
+  margin: 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--mono-text-secondary);
+}
+
+@media (max-width: 420px) {
+  .ck-stage {
+    padding: 0;
+  }
+
+  .ck-phone {
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+  }
+}

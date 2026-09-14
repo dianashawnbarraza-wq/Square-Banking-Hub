@@ -1,0 +1,278 @@
+/**
+ * Shared styles for Monochrome primitives.
+ * Import once from product shells (e.g. checking.css).
+ */
+
+@import "./tokens.css";
+
+/**
+ * Page stack: 16px between top-level items.
+ * Put this on the main scroll column (not inside cards).
+ */
+.mono-page-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mono-space-page);
+}
+
+.mono-page-stack > * {
+  margin-block: 0;
+}
+
+/** Tight cluster inside a card/section — 8px between related bits */
+.mono-cluster {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mono-space-unit);
+}
+
+.mono-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mono-space-100);
+  border: none;
+  cursor: pointer;
+  font-family: var(--mono-font-display);
+  font-weight: 500;
+  font-size: var(--mono-para-30-size);
+  line-height: var(--mono-para-30-leading);
+  border-radius: var(--mono-radius-pill);
+  padding: var(--mono-pad-wide-md-y) var(--mono-pad-wide-md-x);
+  min-height: var(--mono-min-height-md);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.mono-btn--primary {
+  background: var(--mono-emphasis-fill);
+  color: var(--mono-text-inverse);
+}
+
+.mono-btn--secondary {
+  background: var(--mono-fill-40);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.mono-btn--ghost {
+  background: transparent;
+  color: var(--mono-text-10);
+}
+
+.mono-btn--sm {
+  min-height: var(--mono-min-height-sm);
+  padding: var(--mono-space-unit) var(--mono-space-page);
+  font-size: var(--mono-para-20-size);
+  line-height: var(--mono-para-20-leading);
+}
+
+.mono-btn--icon {
+  flex: 0 0 auto;
+  width: var(--mono-min-height-md);
+  height: var(--mono-min-height-md);
+  min-height: var(--mono-min-height-md);
+  padding: 0;
+  border-radius: var(--mono-radius-100);
+  background: transparent;
+  color: var(--mono-text-10);
+}
+
+.mono-btn--block {
+  flex: none;
+  width: 100%;
+}
+
+.mono-btn--icon.mono-btn--secondary {
+  background: var(--mono-fill-40);
+  border-radius: var(--mono-radius-pill);
+}
+
+.mono-paging {
+  display: flex;
+  gap: var(--mono-space-200);
+  height: 40px;
+  align-items: flex-start;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.mono-paging::-webkit-scrollbar {
+  display: none;
+}
+
+.mono-paging-tab {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 4px 0 10px;
+  font-family: var(--mono-font-display);
+  font-weight: 700;
+  font-size: var(--mono-heading-20-size);
+  line-height: var(--mono-heading-20-leading);
+  color: var(--mono-text-secondary);
+  white-space: nowrap;
+  position: relative;
+}
+
+.mono-paging-tab.is-active {
+  color: var(--mono-text-10);
+  padding-bottom: var(--mono-space-unit);
+}
+
+.mono-paging-tab.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 6px 6px 0 0;
+  background: var(--mono-text-10);
+}
+
+.mono-mnh {
+  background: var(--mono-surface-10);
+  border: var(--mono-border-10) solid var(--mono-fill-40);
+  border-radius: var(--mono-radius-card);
+  padding: var(--mono-space-200);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mono-space-100);
+}
+
+.mono-mnh-account {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mono-space-100);
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--mono-font-text);
+  font-weight: 500;
+  font-size: var(--mono-para-20-size);
+  line-height: var(--mono-para-20-leading);
+  color: var(--mono-text-10);
+  width: fit-content;
+}
+
+.mono-chevron {
+  color: var(--mono-text-10);
+}
+
+.mono-mnh-amount {
+  margin: 0;
+  font-family: var(--mono-font-display);
+  font-weight: 700;
+  font-size: var(--mono-display-10-size);
+  line-height: var(--mono-display-10-leading);
+  color: var(--mono-text-10);
+}
+
+.mono-mnh-sub {
+  margin: 0;
+  font-family: var(--mono-font-text);
+  font-weight: 500;
+  font-size: var(--mono-para-20-size);
+  line-height: var(--mono-para-20-leading);
+  color: var(--mono-text-10);
+}
+
+.mono-pill-ready {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: var(--mono-radius-pill);
+  background: var(--mono-success-tint);
+  color: var(--mono-success-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mono-pill-ready::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mono-success-text);
+}
+
+.mono-mnh-sub .mono-pill-ready {
+  margin-left: var(--mono-space-unit);
+  vertical-align: middle;
+}
+
+.mono-mnh-actions {
+  display: flex;
+  gap: var(--mono-space-100);
+  margin-top: var(--mono-space-100);
+}
+
+.mono-row {
+  display: flex;
+  align-items: center;
+  gap: var(--mono-space-200);
+  width: 100%;
+  padding: var(--mono-space-200) 0;
+  border: none;
+  border-bottom: var(--mono-border-10) solid var(--mono-divider-20);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  font: inherit;
+}
+
+.mono-row-leading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mono-row-leading .mono-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  padding: var(--mono-space-unit);
+  border-radius: var(--mono-radius-100);
+  background: var(--mono-fill-40);
+  color: var(--mono-text-10);
+}
+
+.mono-row-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mono-space-25);
+  flex: 1;
+  min-width: 0;
+}
+
+.mono-row-title {
+  font-family: var(--mono-font-display);
+  font-weight: 500;
+  font-size: var(--mono-para-30-size);
+  line-height: var(--mono-para-30-leading);
+  color: var(--mono-text-10);
+}
+
+.mono-row-desc {
+  font-family: var(--mono-font-text);
+  font-weight: 400;
+  font-size: var(--mono-para-20-size);
+  line-height: var(--mono-para-20-leading);
+  color: var(--mono-text-secondary);
+}
+
+.mono-row-trailing {
+  display: flex;
+  align-items: center;
+  color: var(--mono-text-10);
+  flex-shrink: 0;
+}

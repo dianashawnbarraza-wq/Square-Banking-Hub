@@ -1,8 +1,8 @@
-# Square Money Hub
+# Square Banking Design Hub
 
-Design sandbox landing page for Square Money explorations — Checking/debit adoption → Banking overview → agentic Cash Desk.
+Cash flow design hub — Checking Adoption (SPOS), Banking overview, agentic Cash Desk, and tax set-aside.
 
-Modeled on the appointments workstream hub IA (header eyebrows, display hero, numbered exploration/reference rows). Content is Square Money only.
+Modeled on the appointments workstream hub IA (header eyebrows, display hero, numbered exploration/reference rows).
 
 ## Local demo
 
@@ -13,6 +13,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) (`/` route).
 
+Tax Set-Aside Cash Desk variant: [http://localhost:3000/cash-desk/tax](http://localhost:3000/cash-desk/tax).
+
+Square Checking (from Figma): [http://localhost:3000/checking](http://localhost:3000/checking) · card numbers at `/checking/card`.
+
 Production check:
 
 ```bash
@@ -20,10 +24,14 @@ npm run build
 npm start
 ```
 
+## Design system
+
+Product screens (Checking, tax, etc.) follow [`design.md`](./design.md) and the Figma [Square Monochrome UI System](https://www.figma.com/design/h8cTguFsJdZqirJUR2cBVm/Square-Monochrome-UI-System?node-id=9-1361) **components** catalog. Shared primitives live in `components/monochrome/`.
+
 ## Stack
 
 - Next.js App Router + TypeScript
-- Inter via `next/font`
+- Inter via `next/font` (hub); Monochrome product chrome prefers Square/Cash Sans when available
 - `robots: noindex, nofollow` in `app/layout.tsx`
 
 ## Ready for Vercel
