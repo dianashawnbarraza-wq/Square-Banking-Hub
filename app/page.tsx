@@ -19,7 +19,7 @@ const explorations: HubItem[] = [
     title: "Square Checking",
     description:
       "Welcome / Apple Wallet, card tracker, Banking home, Deposit / Transfer / card numbers",
-    href: "https://cursor.com/codebase/d-shawn/tmp-ff49778e73eaf31e",
+    href: "https://square-checking-v1.vercel.app/banking",
     tags: [
       {
         label: "Figma",
@@ -41,13 +41,21 @@ const explorations: HubItem[] = [
     title: "AI Vision (Cash Desk)",
     description:
       "Available hero, Approvals with evidence, propose → confirm; Square seller DS #101010 / #005AD9",
-    href: "https://github.com/dianashawnbarraza-wq/square-money-cash-desk/pull/1",
+    href: "https://square-money-cash-desk.vercel.app",
     tags: [
       {
         label: "Figma",
         href: "https://www.figma.com/design/OsWnpib1fPOE1wcuNtDXGd",
       },
     ],
+  },
+  {
+    index: "04",
+    meta: "Prototype · Agentic · Tax · Mobile",
+    title: "Banking Overview · Tax Set-Aside",
+    description:
+      "Square Checking DS mobile Overview — tax set-aside on Banking shell (Monochrome)",
+    href: "/cash-desk/tax",
   },
 ];
 
@@ -92,49 +100,53 @@ const references: HubItem[] = [
 function HubList({ items }: { items: HubItem[] }) {
   return (
     <ol className="uq-list">
-      {items.map((item) => (
-        <li key={item.index + item.title} className="uq-list-item">
-          <a
-            href={item.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="uq-link"
-          >
-            <article className="uq-item">
-              <span className="uq-item-index">{item.index}</span>
-              <div className="uq-item-body">
-                <p className="uq-item-meta">{item.meta}</p>
-                <h2 className="uq-item-title">{item.title}</h2>
-                <p className="uq-item-desc">{item.description}</p>
+      {items.map((item) => {
+        const external = item.href.startsWith("http");
+        return (
+          <li key={item.index + item.title} className="uq-list-item">
+            <a
+              href={item.href}
+              {...(external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+              className="uq-link"
+            >
+              <article className="uq-item">
+                <span className="uq-item-index">{item.index}</span>
+                <div className="uq-item-body">
+                  <p className="uq-item-meta">{item.meta}</p>
+                  <h2 className="uq-item-title">{item.title}</h2>
+                  <p className="uq-item-desc">{item.description}</p>
+                </div>
+                <span className="uq-item-arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </article>
+            </a>
+            {item.tags && item.tags.length > 0 ? (
+              <div className="uq-revision-tags">
+                <ul className="uq-tag-row">
+                  {item.tags.map((tag) => (
+                    <li key={tag.href} className="uq-tag-item">
+                      <a
+                        href={tag.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="uq-tag"
+                      >
+                        {tag.label}
+                        <span className="uq-tag-arrow" aria-hidden="true">
+                          ↗
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <span className="uq-item-arrow" aria-hidden="true">
-                ↗
-              </span>
-            </article>
-          </a>
-          {item.tags && item.tags.length > 0 ? (
-            <div className="uq-revision-tags">
-              <ul className="uq-tag-row">
-                {item.tags.map((tag) => (
-                  <li key={tag.href} className="uq-tag-item">
-                    <a
-                      href={tag.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="uq-tag"
-                    >
-                      {tag.label}
-                      <span className="uq-tag-arrow" aria-hidden="true">
-                        ↗
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-        </li>
-      ))}
+            ) : null}
+          </li>
+        );
+      })}
     </ol>
   );
 }
@@ -144,15 +156,14 @@ export default function HomePage() {
     <main className="uq-landing">
       <div className="uq-landing-inner">
         <header className="uq-landing-header">
-          <span className="uq-eyebrow">Square Money Design Sandbox</span>
+          <span className="uq-eyebrow">Square Banking Design Hub</span>
           <span className="uq-eyebrow uq-eyebrow--muted">Workstream</span>
         </header>
 
         <section className="uq-hero">
-          <h1 className="uq-display">Square Money</h1>
+          <h1 className="uq-display">Square Banking</h1>
           <p className="uq-lede">
-            Gusto story arc: Checking and debit adoption, then Banking overview,
-            then agentic Cash Desk — prototypes and references in one place.
+            Cash flow design including Checking Adoption (SPOS)
           </p>
         </section>
 
@@ -161,7 +172,7 @@ export default function HomePage() {
             <span id="explorations-heading" className="uq-eyebrow">
               Explorations
             </span>
-            <span className="uq-count">03</span>
+            <span className="uq-count">04</span>
           </header>
           <HubList items={explorations} />
         </section>
